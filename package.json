@@ -1,12 +1,20 @@
 {
   "name": "@pipeworx/mcp-avoindata-fi",
-  "version": "0.1.4",
+  "version": "0.2.0",
   "description": "Finland Open Data (www.avoindata.fi/data/en) CKAN MCP.",
   "type": "module",
-  "main": "src/index.ts",
-  "types": "src/index.ts",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./tools.json": "./tools.json",
+    "./package.json": "./package.json"
+  },
   "bin": {
     "mcp-avoindata-fi": "bin/cli.js"
+  },
+  "files": ["bin/", "lib/", "tools.json", "server.json"],
+  "engines": {
+    "node": ">=18"
   },
   "keywords": ["mcp", "mcp-server", "model-context-protocol", "pipeworx", "avoindata-fi"],
   "license": "MIT",
@@ -14,19 +22,12 @@
     "type": "git",
     "url": "git+https://github.com/pipeworx-io/mcp-avoindata-fi.git"
   },
-  "scripts": {
-    "typecheck": "tsc --noEmit"
-  },
-  "dependencies": {
-    "@modelcontextprotocol/sdk": "^1.30.0",
-    "tsx": "^4.19.0"
-  },
-  "devDependencies": {
-    "typescript": "^5.9.3",
-    "@cloudflare/workers-types": "^4.20260405.1"
-  },
+  "mcpName": "io.github.pipeworx-io/avoindata-fi",
   "pipeworx": {
-    "sourceHash": "v1-ffe476ba9b701ebd3e851df0c91f825af9289f9ac0eaaa95fbf7ed0ca5a54e2d",
-    "sourceCommit": "93c7d52ace03a2bb9aee5e6024f6858adab0dd04"
+    "mode": "gateway",
+    "slug": "avoindata-fi",
+    "gatewaySlug": "avoindata-fi",
+    "sourceHash": "v1-aced7419050fd09f4fdde1e8c8cf4d9763c5a9c1bb56b6f52ea3a833a339a349",
+    "sourceCommit": "c6136b81713e72ccb22977ca0c0cd981f8c3f081"
   }
 }
